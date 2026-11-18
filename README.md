@@ -9,6 +9,7 @@ Each folder is the complete project as it stands **at the end of that episode**,
 |---|---|---|---|
 | [episode-01](episode-01) | How do I talk to Gemini from my own Python code? | `bot.py` asks Gemini one question; the key lives in `.env` | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-01) |
 | [episode-02](episode-02) | How do I give my chatbot its own window? | a terminal chat, then `ui.py`: a window (frontend) that talks to `bot.py` (backend) | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-02) |
+| [episode-03](episode-03) | Why does the same question give different answers? | a Settings menu in the window: temperature, top-P, max tokens (top-K fixed at 64) | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-03) |
 
 ## Run an episode
 
