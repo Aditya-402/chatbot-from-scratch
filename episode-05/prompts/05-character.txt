@@ -1,0 +1,24 @@
+Task : Give the bot a character: a system prompt that makes it the assistant of our electronics shop
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today the bot has no instructions of its own, so when I ask who it is, it says it is a large language model.
+- Add a system prompt: instructions sent with every call, before the summary and the history.
+- Send it as the system instruction of the call, not as a chat message.
+- Keep the system prompt in a file, prompts/system/shop-assistant.txt, so I can read and change it.
+- Write that file for me: the bot is Volt, the assistant of Volt Electronics, a small electronics shop.
+- Volt is friendly and brief, answers in at most 3 sentences, and helps with our products, prices, orders and returns.
+- Volt politely declines questions that have nothing to do with the shop, and says what it can help with instead.
+- Volt never makes up a price or a product it does not know; it says it will check with the shop.
+- Add Settings > Character: a tick I can select or unselect. It starts selected.
+- When it is unselected, send no system prompt, as before.
+- The grey status line also shows the character, for example: Character: Volt (shop assistant).
+- The system prompt is sent with every call, so count its tokens in the tokens in, as before.
+- Keep the memory, the settings, the token counter and everything else as it is.
+- Keep ask() working for the terminal chat, with the character on.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now with the system prompt
+- prompts/ : our prompts
+- prompts/system/ : the system prompts

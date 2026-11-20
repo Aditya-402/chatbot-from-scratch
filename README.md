@@ -11,6 +11,7 @@ Each folder is the complete project as it stands **at the end of that episode**,
 | [episode-02](episode-02) | How do I give my chatbot its own window? | a terminal chat, then `ui.py`: a window (frontend) that talks to `bot.py` (backend) | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-02) |
 | [episode-03](episode-03) | Why does the same question give different answers? | a Settings menu in the window: temperature, top-P, max tokens (top-K fixed at 64) | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-03) |
 | [episode-04](episode-04) | Why does my chatbot forget what I just told it? | a short-term memory (last N exchanges, window 0-15) and a long-term memory (one running summary), both switchable; New chat | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-04) |
+| [episode-05](episode-05) | How do I make my chatbot behave like a shop assistant? | a character: system prompts in prompts/system/ (role, step by step, examples), switched and edited in Settings, with an on/off tick | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-05) |
 
 ## Run an episode
 
