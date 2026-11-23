@@ -12,6 +12,7 @@ Each folder is the complete project as it stands **at the end of that episode**,
 | [episode-03](episode-03) | Why does the same question give different answers? | a Settings menu in the window: temperature, top-P, max tokens (top-K fixed at 64) | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-03) |
 | [episode-04](episode-04) | Why does my chatbot forget what I just told it? | a short-term memory (last N exchanges, window 0-15) and a long-term memory (one running summary), both switchable; New chat | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-04) |
 | [episode-05](episode-05) | How do I make my chatbot behave like a shop assistant? | a character: system prompts in prompts/system/ (role, step by step, examples), switched and edited in Settings, with an on/off tick | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-05) |
+| [episode-06](episode-06) | How do I teach my chatbot about my own shop? | today's date and a shop sheet: shop.py turns a PDF, a web page, Markdown and text in prompts/shop/ into plain text sent with every call (context stuffing), with Reload and Show shop sheet in Settings | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-06) |
 
 ## Run an episode
 

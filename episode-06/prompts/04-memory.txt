@@ -1,0 +1,24 @@
+Task : Give the bot a short-term memory: the last few exchanges of this chat, sent with every new question
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today ask() sends only my latest question to Gemini, so the bot forgets everything I said before.
+- In bot.py, keep the history in our own list: every question I ask and every reply the bot gives. Don't use the SDK's chats API.
+- One exchange is one question plus its reply.
+- With each new question, send the last N exchanges word for word, then the new question. Older exchanges are not sent.
+- N is the memory window. It starts at 6.
+- Keep ask() working as it does now for the terminal chat, with the same settings (temperature, top_p, max_output_tokens).
+- Add a function new_chat() that empties the history.
+- The memory lasts only while the program runs. Don't save it to a file.
+- In the window, add Settings > Short-term memory: a tick I can select or unselect. It starts selected.
+- When it is unselected, send only my latest question, as before.
+- Add Settings > Memory window... with a choice of 0, 3, 6, 9, 12 or 15 exchanges.
+- Add Settings > New chat: it calls new_chat() and clears the chat area.
+- The grey status line under the menu bar also shows the memory, for example: Short-term on, 6 exchanges, 4 in the window.
+- Keep everything else as it is: the grey line under each reply with its tokens in and out, the token counter, the settings, the error messages and the colours.
+- No summary of older exchanges yet, and no system prompt.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now with the history
+- prompts/ : our prompts

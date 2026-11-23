@@ -1,0 +1,17 @@
+Task : Let me chat with the bot in the terminal, as many questions as I like
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today the question is written inside bot.py. I want to type my question in the terminal while it runs.
+- After each answer, ask me for the next question.
+- When I type exit or bye, the chat ends.
+- Show my question as "You: ..." and the answer as "Bot: ...", so the chat reads like a conversation.
+- Put the call to Gemini in one function, ask(question), that returns the reply text and the token usage (tokens in, tokens out), so a window can use it later.
+- Add a function usage() that returns the totals so far in this run: tokens in, tokens out, and the cost in dollars (Gemini 3.1 Flash Lite: $0.25 per 1 million input tokens, $1.50 per 1 million output tokens).
+- Keep the model, the thinking setting and load_dotenv exactly as they are.
+- Each question is on its own: no chat history yet.
+
+Folder arch :
+- bot.py : the chatbot (backend)
+- .env : GEMINI_API_KEY
+- requirements.txt : the libraries used

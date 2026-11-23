@@ -1,0 +1,21 @@
+Task : Add a menu bar to the window with a Settings menu, with the same settings as Google AI Studio, so I can change how the bot picks its words
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- In bot.py, let ask() also take the settings: temperature, top_p and max_output_tokens. Keep the model and the thinking setting as they are.
+- Add a menu bar at the top of the window with one menu, Settings.
+- Settings > Temperature... opens a small dialog with a slider from 0 to 2, in steps of 0.1, starting at 1.0.
+- Settings > Top-P... opens a small dialog with a slider from 0 to 1, in steps of 0.05, starting at 0.95.
+- Settings > Max tokens... opens a small dialog with a slider from 10 to 2000, in steps of 10, starting at 2000.
+- Each dialog shows the slider's current value, an OK button and a Cancel button.
+- Settings > Top-K: 64 (fixed for this model) is shown greyed out, and top_k is left out of the call.
+- Settings > Reset to defaults puts every setting back where it started.
+- Under the menu bar, one small grey line always shows the current settings, for example: Temperature 1.0 · Top-P 0.95 · Max tokens 2000.
+- The grey line under each reply also shows the settings used, and "stopped: max tokens" when the answer was cut short.
+- Keep everything else in the window as it is: the chat, the token counter, the error messages and the colours.
+- The terminal chat in bot.py keeps working with the starting settings.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend)
+- prompts/ : our prompts
