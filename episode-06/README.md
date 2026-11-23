@@ -36,6 +36,8 @@ A chatbot application powered by the Google GenAI SDK (`gemini-3.1-flash-lite`).
 └── README.md          # Setup and execution guide
 ```
 
+**About the bundle price:** `prompts/shop/offers.html` shows 999 rupees, because it is the file as it stands after the live price change in the video. The chapter page's sample file starts at 1,099, so you can make the same change yourself.
+
 ## Setup Instructions
 
 ### 1. Prerequisites
