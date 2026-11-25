@@ -1,0 +1,16 @@
+Task : Move my Gemini API key out of the code, into a .env file
+
+Context :
+- bot.py is the code copied from Google AI Studio. The API key is written directly in bot.py.
+- Move the key into a .env file as GEMINI_API_KEY and remove it from bot.py.
+- Use load_dotenv from python-dotenv to load it.
+- Add .env to .gitignore, so the key never goes to Git.
+- Keep the model and the question exactly as they are.
+- Don't add memory, tools, a UI or new features.
+
+Folder arch :
+- bot.py : the chatbot
+- .env : GEMINI_API_KEY
+- .gitignore : contains .env and .venv
+- requirements.txt : the libraries used
+- README.md : how to set up the virtual environment and run

@@ -1,0 +1,24 @@
+Task : Create a desktop window for the chatbot, from my sketch prompts/ui-sketch.png
+
+Context :
+- Open the picture prompts/ui-sketch.png first and build the window to look like it: a large chat area, my question and the bot's reply in bubbles, a typing box at the bottom and a Send button.
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Use tkinter. Create ui.py; it calls ask() from bot.py.
+- The chat area is only for reading: I can read and copy from it, but not type into it.
+- In the typing box, pressing Enter sends my question, just like clicking Send.
+- Under each reply, one small grey line: tokens in and tokens out.
+- In the top right corner, a token counter like Google AI Studio's: it shows the total tokens so far; when I hover over it, it shows tokens in, tokens out and the cost so far. It gets these numbers from usage() in bot.py.
+- While the bot is thinking, show "Thinking..." and keep the window responsive.
+- If anything goes wrong, show a short plain message in the chat, in the error colour below, and keep the window open. For example:
+-- 429 RESOURCE_EXHAUSTED: "Too many requests for the free tier. Wait a minute and try again."
+-- 503 UNAVAILABLE: "Gemini is busy right now. Try again in a moment."
+-- no internet: "No internet connection."
+- The window opens at half the size of the screen.
+- The typing box at the bottom is 10% of the window's height; the chat area above it takes the rest.
+- Use the Learn AI by Building colours: window background cream #faf6ee; chat area white #ffffff; my questions in plum #5a3d5c; the bot's replies in ink #2b2730; the token line in grey #6a626e; error messages in clay #a8441f.
+- No menus, no system prompt and no chat history yet.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend)
+- prompts/ : our prompts and ui-sketch.png

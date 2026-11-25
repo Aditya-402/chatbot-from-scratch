@@ -1,0 +1,22 @@
+Task : Give the bot a long-term memory: one running summary of the exchanges that fall outside the memory window
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today, exchanges older than the memory window are simply not sent, so the bot forgets them.
+- When an exchange falls outside the window, ask Gemini to update one running summary with it: the old summary plus that exchange in, a new short summary out.
+- Keep the summary short, at most 100 words, and keep facts about me such as my name.
+- With each new question, send the summary first, then the last N exchanges word for word, then the new question.
+- The summary lasts only while the program runs. Don't save it to a file.
+- Add Settings > Long-term memory: a tick I can select or unselect. It starts selected.
+- When it is unselected, make no summary and send none, as before.
+- Settings > New chat also clears the summary.
+- Add Settings > Show memory summary: a small window that shows the current summary.
+- The grey status line also shows the long-term memory, for example: Short-term on, 3 exchanges, 3 in the window. Long-term on, 5 summarised.
+- Count the tokens of the summary updates in the token counter too.
+- Keep ask() working for the terminal chat, and keep everything else as it is.
+- No system prompt yet.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), with the history and the summary
+- prompts/ : our prompts
