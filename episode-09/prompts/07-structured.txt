@@ -1,0 +1,22 @@
+Task : Make Volt's answers something our code can use, not just read (structured output): the reply, plus each product with its price as a plain number
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today Volt's price sits inside a sentence, so our code cannot add it up or check it.
+- In bot.py, describe the answer with two small Pydantic classes. Item: product (text), price_rupees (whole number), quantity (whole number). Answer: reply (text), items (a list of Item).
+- Ask Gemini to answer in exactly that shape (JSON with the Answer schema), and read it back into an Answer.
+- items lists each product the question asks about, with its price from the shop sheet and the quantity asked. When the question has no price in the shop sheet, items is empty.
+- The window shows the reply as before. Under it, when items is not empty, one line our code works out itself: Total (our code): 1,298 rupees (price times quantity, added up).
+- Add Settings > Structured answers: a tick I can select or unselect. It starts selected. Unselected, Volt answers in plain text as before, with no total line.
+- The memory keeps the reply text only.
+- Add pydantic to requirements.txt if it is not there.
+- Keep the date, the shop sheet, the character, the memory, the settings and everything else as it is.
+- Don't write test files; I will try it myself.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now with structured answers
+- shop.py : reads the shop files into plain text
+- prompts/ : our prompts
+- prompts/system/ : the system prompts
+- prompts/shop/ : our shop files

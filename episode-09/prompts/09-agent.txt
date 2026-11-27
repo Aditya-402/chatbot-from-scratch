@@ -1,0 +1,28 @@
+Task : Turn Volt into our first agent: give it two more tools, and let our own code run the tools in a loop, one step after another, until Volt can answer or reaches a step cap
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Keep find_phone(model) in tools.py as it is.
+- Add list_phones(brand, in_stock_only) to tools.py. It returns the phones of that brand from data/phones.xlsx, joined by Product ID, cheapest first. In stock only leaves out phones that are Out of stock; Low stock still counts. At most 10 rows: product ID, model, variant, selling price in rupees, status. No delivery days.
+- Add check_delivery(product_id) to tools.py. For one product ID it returns model, variant, status, delivery days, and the date it arrives: today's date plus the delivery days. When the phone is out of stock, it returns the restock date instead.
+- In bot.py, tell Gemini about all three tools, each with a one-line description.
+- I have written prompts/system/agent.txt myself. Add it to the system prompt whenever Phone lookup is on. Don't change the file.
+- Our own code runs the loop: ask Gemini; when it asks for a tool, run the tool, send the result back, and ask again. Every call to Gemini is one step. Stop when Volt answers without a tool, or at the step cap.
+- Add Settings > Step cap: a number from 1 to 10, starting at 6.
+- When the loop reaches the step cap before Volt has answered, don't ask Gemini again. Volt replies: "I couldn't finish this in N steps. Please ask again or raise the step cap." Say "1 step" when N is 1.
+- In the window, the grey tool line becomes one numbered grey line per tool call under the reply, for example: Step 1: list_phones("Samsung", in stock) -> 10 rows. Then one last grey line: Steps: 3 of 6.
+- Volt never invents a price, a stock status or a date.
+- Keep structured answers working, and count every step's tokens in the tokens in, as before.
+- Keep the date, the shop sheet, the character, the memory, the settings and everything else as it is.
+- Don't write test files; I will try it myself.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now an agent: the loop and the step cap
+- tools.py : find_phone, list_phones, check_delivery; reads data/phones.xlsx
+- shop.py : reads the shop files into plain text
+- check.py : our regression test
+- data/phones.xlsx : the 500 phones, 3 sheets
+- prompts/ : our prompts
+- prompts/system/agent.txt : how Volt works step by step with tools
+- prompts/shop/ : our shop files

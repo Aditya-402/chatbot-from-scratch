@@ -1,0 +1,10 @@
+Task : Let Volt stop when it has the answer: run the agent loop without the JSON shape, and shape the answer once at the end
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today, when the tools and structured answers are on together, Gemini keeps calling tools until the step cap.
+- In bot.py, run the agent loop without the JSON shape: ask Gemini, run the tools, send the results back, until Volt answers in plain text or reaches the step cap.
+- When Volt has answered, our code makes one last call to Gemini, with no tools, that turns this answer into the reply and items, as before. This last call is not a step, but its tokens count in the tokens in.
+- When structured answers is off, there is no last call.
+- Keep agent.txt, the step cap, the step lines, the total and everything else as it is.
+- Don't write test files; I will try it myself.
