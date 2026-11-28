@@ -1,0 +1,26 @@
+Task : Teach the bot about our own shop from the files in prompts/shop/ (context stuffing: the whole shop sheet goes into every call)
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today the bot knows nothing about our shop, so it says it will check when I ask a price.
+- prompts/shop/ holds our shop files: products.pdf, offers.html, faq.md and returns.txt.
+- Write a small preprocessor in a new file, shop.py: it reads every file in prompts/shop/ and turns each one into plain text.
+- PDF: take the text of every page. HTML: take the visible text, without tags. .md and .txt: take the text as it is.
+- Use pypdf for PDF and beautifulsoup4 for HTML; install them in .venv and add them to requirements.txt.
+- Put the texts together into one shop sheet, each part starting with its file name.
+- Send the shop sheet with every call, after the date line and the system prompt, as part of the system instruction.
+- Volt answers prices and products only from the shop sheet; for anything not in it, it says it will check with the shop.
+- Read the files again when I choose Settings > Reload shop files, so I can change a file without restarting.
+- Add Settings > Shop files: a tick I can select or unselect. It starts selected. Unselected, send no shop sheet.
+- Add Settings > Show shop sheet: a small window with the text the bot receives.
+- The grey status line also shows it, for example: Shop: 4 files, 410 tokens.
+- Count its tokens in the tokens in, as before.
+- Keep the date, the character, the memory, the settings and everything else as it is.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now with the shop sheet
+- shop.py : reads the shop files into plain text
+- prompts/ : our prompts
+- prompts/system/ : the system prompts
+- prompts/shop/ : our shop files

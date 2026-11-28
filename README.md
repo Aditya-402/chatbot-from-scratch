@@ -16,6 +16,7 @@ Each folder is the complete project as it stands **at the end of that episode**,
 | [episode-07](episode-07) | How do I get an answer my code can use, not just read? | structured answers: Gemini fills a Pydantic shape (reply + items) and our code adds up the total; `check.py`, a regression test against our own answer key | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-07) |
 | [episode-08](episode-08) | How does my chatbot look things up in my own data? | the first tool: `find_phone` in `tools.py` reads the 500-phone workbook `data/phones.xlsx`; our own code runs the call and sends the rows back | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-08) |
 | [episode-09](episode-09) | How does my chatbot answer a question that needs several look-ups? | the first agent: `list_phones` and `check_delivery` join `find_phone`; our own code runs them in a loop with a step cap; `agent.txt` (Plan, Execute, Evaluate, Iterate); structured answers shaped once at the end | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-09) |
+| [episode-10](episode-10) | How do I make my AI agent safe to trust? | an agent we can trust: tools return their errors as text (no more "we don't sell it" from an empty list), `find_phone` searches the variant; `place_order` writes `data/orders.csv` only after a Yes in a box our own code shows; `check.py` 10 checks | [zip](https://github.com/Aditya-402/chatbot-from-scratch/releases/tag/episode-10) |
 
 ## Run an episode
 

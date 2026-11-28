@@ -1,0 +1,20 @@
+Task : Tell the bot today's date and time with every question
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today the bot does not know what day it is, so it cannot answer "What is today's date?".
+- With every call, add one line before the system prompt: Today is <weekday, day month year>, <time>.
+- Take the date and time from this computer at the moment of the call, not when the program starts.
+- Send it together with the system prompt as the system instruction of the call, not as a chat message.
+- Add Settings > Today's date: a tick I can select or unselect. It starts selected.
+- When it is unselected, send no date line, as before.
+- The grey status line also shows it, for example: Date: on.
+- Count its tokens in the tokens in, as before.
+- Keep the character, the memory, the settings and everything else as it is.
+- Keep ask() working for the terminal chat.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now adding today's date
+- prompts/ : our prompts
+- prompts/system/ : the system prompts

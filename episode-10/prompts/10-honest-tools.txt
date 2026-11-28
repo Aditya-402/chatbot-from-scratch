@@ -1,0 +1,23 @@
+Task : Make our tools honest when they fail: a tool that cannot do its job says so, and the agent loop passes that on to Volt instead of hiding it or crashing
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today, when data/phones.xlsx is missing, find_phone and list_phones return an empty list, the same answer as "no such phone". Volt then tells the customer we don't sell it.
+- In tools.py, when the workbook cannot be found or opened, every tool returns an error as text instead of rows, for example: "The phone catalogue could not be opened: data/phones.xlsx was not found."
+- find_phone matches only the brand and model name, so a search with the variant, such as find_phone("Galaxy S25 12GB/256GB"), finds nothing, and Volt says we don't sell it. Make find_phone match the words against the brand, the model and the variant together, whatever spaces sit around the "/".
+- In bot.py, the agent loop runs every tool inside a try. When a tool raises an error, send its message back to Gemini as the tool's result, as text, and carry on with the loop.
+- In the window, a step whose tool failed shows the error in its grey line, for example: Step 1: find_phone("Galaxy S25") -> error: the phone catalogue could not be opened.
+- Don't change prompts/system/agent.txt; I will add a line myself.
+- Keep the step cap, the step lines, structured answers, the date, the shop sheet, the character, the memory, the settings and everything else as it is.
+- Don't write test files; I will try it myself.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), an agent: the loop and the step cap
+- tools.py : find_phone, list_phones, check_delivery; reads data/phones.xlsx
+- shop.py : reads the shop files into plain text
+- check.py : our regression test
+- data/phones.xlsx : the 500 phones, 3 sheets
+- prompts/ : our prompts
+- prompts/system/agent.txt : how Volt works step by step with tools
+- prompts/shop/ : our shop files

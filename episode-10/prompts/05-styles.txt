@@ -1,0 +1,22 @@
+Task : Let me switch between three versions of the shop assistant's system prompt, and edit them in the window
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today there is one system prompt, prompts/system/shop-assistant.txt.
+- Add two more versions of the same assistant, each in its own file in prompts/system/:
+- role.txt : only the role, in 2 lines: who Volt is and what it helps with.
+- step-by-step.txt : the role, then the steps Volt follows for every answer: understand the question, check it is about the shop, answer in at most 3 sentences, offer one next step.
+- examples.txt : the role, then 3 short example questions with the exact answers Volt should give, one of them a polite refusal.
+- Rename shop-assistant.txt to step-by-step.txt if it already holds steps; otherwise keep it as a fourth version.
+- Add Settings > Character version: a choice of the versions found in prompts/system/.
+- Add Settings > Edit character...: a small window with the current version's text, a Save button and a Cancel button.
+- Save writes the file and uses the new text from the next question on.
+- Settings > New chat keeps the chosen version.
+- The grey status line shows the version, for example: Character: Volt (examples).
+- Keep everything else as it is.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), with the system prompt versions
+- prompts/ : our prompts
+- prompts/system/ : the system prompt versions

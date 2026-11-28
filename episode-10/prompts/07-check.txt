@@ -1,0 +1,25 @@
+Task : Write check.py, a five-question check: it asks Volt fixed questions and compares each total with the answer we wrote down
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- I run it in the terminal with: python check.py
+- At the top of check.py, a list of 5 checks, each a question and the total we expect in rupees. These are our answers, written down:
+- How much is the 20W charger? 899
+- How much is the charger with a cable this week? 999
+- How much are two 2 m USB-C cables? 898
+- How much are wireless earbuds and a phone stand together? 2848
+- How much is a smart watch? 0 (we don't sell it, so no items)
+- For each check, start a new chat and ask through bot.py with structured answers, today's date and the shop files on.
+- Our code works out Volt's total from the items: price times quantity, added up.
+- Print one line per check: its number, the question, Volt's total, the expected total, and PASS or FAIL, in columns.
+- Last line: 5 of 5 passed (or how many passed).
+- Don't change ui.py. Change bot.py only if check.py needs it to ask without the window.
+- Don't write test files; I will try it myself.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend)
+- shop.py : reads the shop files into plain text
+- check.py : the five-question check
+- prompts/ : our prompts
+- prompts/shop/ : our shop files

@@ -1,0 +1,25 @@
+Task : Give Volt its first tool, find_phone: Volt asks for it, and our own code runs it on the phone workbook and sends the result back
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Today the 500 phones are not in the shop files any more. They live in data/phones.xlsx, in 3 sheets joined by Product ID: Product Information, Product Pricing, Product Availability.
+- Write a new file, tools.py, with one function: find_phone(model). It finds every row whose model name contains the words asked, joins the 3 sheets by Product ID, and returns a short list: model, variant, selling price in rupees, status, delivery days. At most 10 rows. Use openpyxl and add it to requirements.txt.
+- In bot.py, tell Gemini about find_phone as a tool, with a one-line description: look up a phone's price and stock by its model name.
+- Don't let the SDK run the tool by itself. When Gemini asks for find_phone, our code runs it, sends the rows back as the function response, and asks Gemini again for the answer.
+- When find_phone returns no rows, Volt says we don't sell that phone. Volt never invents a phone price.
+- Keep structured answers working: the reply plus items with plain-number prices.
+- In the window, under a reply that used the tool, add one grey line like the token line, for example: Tool: find_phone("Galaxy S25") -> 3 rows.
+- Add Settings > Phone lookup: a tick I can select or unselect. It starts selected. Unselected, Volt has no tool.
+- Count the tool's tokens in the tokens in, as before.
+- Keep the date, the shop sheet, the character, the memory, the settings and everything else as it is.
+- Don't write test files; I will try it myself.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), now with a tool
+- tools.py : find_phone, reads data/phones.xlsx
+- shop.py : reads the shop files into plain text
+- check.py : our regression test
+- data/phones.xlsx : the 500 phones, 3 sheets
+- prompts/ : our prompts
+- prompts/shop/ : our shop files

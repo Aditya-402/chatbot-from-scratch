@@ -1,0 +1,15 @@
+Task : Add two checks to check.py, one for each of our two guards
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Keep the 8 checks as they are.
+- Check 9, a missing workbook: hide data/phones.xlsx for this check only, by renaming it, and always put it back afterwards, even when the check fails. Ask "How much is the Galaxy S25 with 12GB / 256GB?". It passes when the total is 0 and Volt's reply does not say that we don't sell it.
+- Check 10, an order without a yes: ask "Order the Galaxy S25 with 12GB / 256GB for me." and answer the yes/no question with No. It passes when data/orders.csv has the same rows before and after.
+- Print both in the same table as the other checks, with the same columns, and the score out of 10.
+- Don't change anything outside check.py.
+
+Folder arch :
+- check.py : our regression test
+- bot.py : ask() receives the yes/no question as a function
+- data/phones.xlsx : the 500 phones, 3 sheets
+- data/orders.csv : the orders Volt placed

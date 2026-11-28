@@ -1,0 +1,27 @@
+Task : Let Volt place an order, but only after the customer says yes in the window: our code asks, not the prompt
+
+Context :
+- Use the virtual environment .venv in this folder. Don't create a new one.
+- Add place_order(product_id) to tools.py. It looks up the phone as check_delivery does. When the phone is In stock or Low stock, it adds one row to data/orders.csv: order number (ORD-0001, ORD-0002, ...), date and time, product ID, model, variant, price in rupees, delivery date. It creates the file with a header row the first time. When the phone is Out of stock, it adds no row and returns an error as text.
+- find_phone also returns each phone's product ID, as list_phones does, so Volt has it when it orders.
+- place_order only adds rows to data/orders.csv. It never changes data/phones.xlsx.
+- In bot.py, tell Gemini about place_order with a one-line description.
+- Before our code runs place_order, it stops and asks the customer. The yes/no question is a function that ask() receives; the window passes its own. Without one, the answer is No.
+- In the window, the question is a small box, "Place this order?", with the phone, variant, price and delivery date, and two buttons, Yes and No. Only Yes runs place_order.
+- On No, our code sends back to Gemini, as the tool's result: "The customer said no. No order was placed." Then the loop carries on.
+- This question can't be switched off in Settings.
+- The grey step line shows the answer, for example: Step 2: place_order("VZ-0018") -> customer said yes -> ORD-0001, or: Step 2: place_order("VZ-0018") -> customer said no.
+- Keep the honest tool errors, the step cap, the step lines, structured answers and everything else as it is.
+- Don't write test files; I will try it myself.
+
+Folder arch :
+- ui.py : the window (frontend)
+- bot.py : the chatbot (backend), an agent: the loop, the step cap, the yes/no before an order
+- tools.py : find_phone, list_phones, check_delivery, place_order; reads data/phones.xlsx
+- shop.py : reads the shop files into plain text
+- check.py : our regression test
+- data/phones.xlsx : the 500 phones, 3 sheets
+- data/orders.csv : the orders Volt placed (made by place_order)
+- prompts/ : our prompts
+- prompts/system/agent.txt : how Volt works step by step with tools
+- prompts/shop/ : our shop files
